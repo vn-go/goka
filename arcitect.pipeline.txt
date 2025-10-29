@@ -1,0 +1,16 @@
+[User API]
+   ↓
+[goka.go] → cung cấp hàm:
+    - DetectType(file)
+    - ExtractText(file)
+    - ExtractMetadata(file)
+    - ExtractAll(file)
+
+   ↓
+[internal/extractor] → gọi detector + parser tương ứng
+   ↓
+[internal/detector] → xác định loại file (mime)
+   ↓
+[internal/parser/*] → chọn parser phù hợp, trích text + metadata
+   ↓
+[internal/metadata] → chuẩn hóa metadata về cùng schema
