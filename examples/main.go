@@ -8,14 +8,15 @@ import (
 )
 
 func main() {
-	text, err := goka.ExtractTextFromFile("sample.pdf")
+	test_file := `D:\code\go\vn-go-dx\goka\test-data\UQ 678.pdf`
+	text, err := goka.ExtractTextFromFile(test_file)
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println("Extracted text:")
 	fmt.Println(text)
 
-	meta, err := goka.ExtractMetadataFromFile("sample.pdf")
+	meta, err := goka.ExtractMetadataFromFile(test_file)
 	if err != nil {
 		log.Fatal(err)
 	}
